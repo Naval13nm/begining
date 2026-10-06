@@ -1,0 +1,227 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* header  */
+
+.headercontent {
+    height: 8vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
+    background: #1a233a;
+    color: #f8f9fa;
+    font-weight: 600;
+}
+
+.headercontent .address,
+.headercontent .contactno,
+.headercontent .duration {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.header-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 24px;
+}
+
+/* nav bar */
+
+.nav {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #ffffff;
+    border-bottom: 3px solid #e3e6ea;
+}
+
+.nav-item {
+    position: relative;
+    display: inline-block;
+    padding: 10px 0;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+.dropdown li a {
+    display: block;
+    padding: 8px 16px;
+    color: #333333;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown li a:hover {
+    background-color: #3ce7e7;
+    color: #2A3855;
+}
+
+.nav-item:hover .dropdown {
+    display: block;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.logo img {
+    height: 35px;
+    width: auto;
+}
+
+.nav .middle {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 24px;
+}
+
+.nav .btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.nav .btn button {
+    border-radius: 50px;
+    background-color: transparent;
+    color: #2A3855;
+    border: 2px solid #2A3855;
+    padding: 8px 28px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav .btn button:hover {
+    background-color: #2A3855;
+    color: #ffffff;
+}
+
+.nav .middle a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2A3855;
+
+}
+
+.nav .middle .nav-item a .fa-chevron-down {
+    font-size: 15px;
+    margin-left: 4px;
+    display: inline-block;
+}
+
+/* hero section */
+
+.hero {
+    height: 80vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+        url('https://prium.github.io/elixir/v3.1.0/assets/img/header-1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    color: #2A3855;
+    margin-bottom: 20px;
+    line-height: 1.1;
+}
+
+.hero-content p {
+    font-size: 24px;
+    color: #4A5568;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary {
+    background-color: #2A3855;
+    color: #ffffff;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1a233a;
+}
+
+.btn-yellow {
+    background-color: #fbc02d;
+    color: #2A3855;
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-yellow:hover {
+    background-color: #f5b000;
+}
+
+.hero-btns a .fa-chevron-right {
+    font-size: 11px !important;
+    margin-left: 6px;
+}

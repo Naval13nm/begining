@@ -1,0 +1,49 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.transition {
+    border-radius: 50px;
+    height: 300px;
+    width: 300px;
+    background-color: #cdcdfc;
+    margin: 50px;
+    transition: all 3s ease-in;
+    /* transition-property: background-color; 
+  transition-duration: 3s;
+  transition-timing-function: ease-in; */
+    animation: colorPulse 4s ease-in-out infinite;
+    transition: transform 0.5s ease-out;
+}
+
+@keyframes colorPulse {
+    0% {
+        background-color: #cdcdfc;
+    }
+
+    50% {
+        background-color: aquamarine;
+        border-radius: 20px;
+        /* You can morph shapes too! */
+    }
+
+    100% {
+        background-color: #cdcdfc;
+    }
+}
+
+
+
+.transition p {
+    padding: 60px;
+    margin: 10px;
+    font-size: 25px;
+}
+
+.transition:hover {
+    background-color: aquamarine;
+    transform: translateX(100px);
+
+}

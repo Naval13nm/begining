@@ -1,0 +1,493 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f8f9fa;
+}
+
+.headerfirst {
+    background: #1a233a;
+    height: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 13px;
+}
+
+.headerfirst .address {
+    display: flex;
+    justify-content:space-evenly;
+    gap: 8px;
+    align-items: center;
+}
+
+.headerfirst .address i,
+.headerfirst .time i {
+    color: #2a75ff;
+}
+
+.headerfirst .time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.headerfirst .time a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.headerfirst .time a:hover {
+    color: #ffffff;
+} */
+
+/* ==========================================
+   1. GLOBAL RESETS & VARIABLES
+   ========================================== */
+:root {
+    --primary-color: #2a75ff;
+    --dark-bg: #1a233a;
+    --light-bg: #f8f9fa;
+    --text-main: #333333;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    color: var(--text-main);
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Common Layout Grids */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    align-items: center;
+}
+
+/* Section Header styling */
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: var(--dark-bg);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.section-title p {
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   2. BUTTONS
+   ========================================== */
+.btn {
+    display: inline-block;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: 2px solid var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #1e5cd9;
+    border-color: #1e5cd9;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.btn-secondary:hover {
+    background-color: #ffffff;
+    color: var(--dark-bg);
+}
+
+.btn-outline {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 6px 18px;
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* ==========================================
+   3. HEADER (TOP UTILITY BAR)
+   ========================================== */
+.top-bar {
+    background-color: var(--dark-bg);
+    height: 45px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.top-bar-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.top-bar .address,
+.top-bar .time-contact,
+.top-bar .time,
+.top-bar .phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.top-bar .time-contact {
+    gap: 20px;
+}
+
+.top-bar i {
+    color: var(--primary-color);
+}
+
+.top-bar .phone a:hover {
+    color: #ffffff;
+}
+
+/* ==========================================
+   4. NAVIGATION MENU
+   ========================================== */
+.main-nav {
+    background-color: #ffffff;
+    height: 80px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--dark-bg);
+}
+
+.logo span {
+    color: var(--primary-color);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #555555;
+    transition: var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary-color);
+}
+
+/* ==========================================
+   5. HERO SECTION
+   ========================================== */
+.hero {
+    position: relative;
+    height: calc(100vh - 125px); /* Full height minus top-bar & nav */
+    background: url('https://unsplash.com') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 35, 58, 0.85);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 35px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* ==========================================
+   6. SERVICES SECTION
+   ========================================== */
+.services {
+    padding: 100px 0;
+    background-color: var(--light-bg);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 1.35rem;
+    margin-bottom: 15px;
+    color: var(--dark-bg);
+}
+
+.service-card p {
+    color: #666666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.learn-more {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.learn-more i {
+    transition: var(--transition);
+}
+
+.learn-more:hover i {
+    transform: translateX(5px);
+}
+
+/* ==========================================
+   7. WHY CHOOSE US SECTION
+   ========================================== */
+.why-choose {
+    padding: 100px 0;
+}
+
+.why-image .image-placeholder {
+    width: 100%;
+    height: 450px;
+    background: url('https://unsplash.com') no-repeat center center/cover;
+    border-radius: 6px;
+}
+
+.why-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--dark-bg);
+}
+
+.feature-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.feature-item i {
+    font-size: 1.75rem;
+    color: var(--primary-color);
+    background-color: rgba(42, 117, 255, 0.1);
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.feature-item h4 {
+    font-size: 1.15rem;
+    margin-bottom: 5px;
+    color: var(--dark-bg);
+}
+
+.feature-item p {
+    color: #666666;
+    font-size: 14px;
+}
+
+/* ==========================================
+   8. FOOTER
+   ========================================== */
+footer {
+    background-color: var(--dark-bg);
+    color: var(--text-muted);
+    padding: 40px 0;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    width: 35px;
+    height: 35px;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.footer-socials a:hover {
+    background-color: var(--primary-color);
+    color: #ffffff;
+}
+
+/* ==========================================
+   9. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================== */
+@media (max-width: 992px) {
+    .grid-2 {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .top-bar {
+        display: none; /* Hide top bar on small screens to save space */
+    }
+    .main-nav {
+        height: 70px;
+    }
+    .nav-links {
+        display: none; /* Can be turned into a hamburger menu with JS */
+    }
+    .footer-flex {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}

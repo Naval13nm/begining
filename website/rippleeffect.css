@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a2e;
+    /* Dark background makes it pop */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 1. Parent Anchor */
+.pulse-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+/* 2. Base Styles for Center & Rings */
+.main-circle,
+.ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #cdcdfc;
+}
+
+/* The static center circle */
+.main-circle {
+    z-index: 2;
+    /* Keeps it on top of the ripples */
+}
+
+/* 3. The Outer Ripples */
+.ring {
+    z-index: 1;
+    /* Attach the ripple animation to all rings */
+    animation: ripple 3s linear infinite;
+}
+
+/* 4. Offset delays so they come out one by one */
+.ring-1 {
+    animation-delay: 0s;
+}
+
+.ring-2 {
+    animation-delay: 1s;
+}
+
+.ring-3 {
+    animation-delay: 2s;
+}
+
+/* 5. The Keyframes Movie */
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(4);
+        /* Grows 4 times its size */
+        opacity: 0;
+        /* Completely fades out */
+    }
+}
