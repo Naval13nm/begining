@@ -1,1 +1,1 @@
-consonants
+hindi
